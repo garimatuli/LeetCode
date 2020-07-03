@@ -1,5 +1,7 @@
-
+// Leet Code July Challenge - July 2
 // LC102 - https://leetcode.com/problems/binary-tree-level-order-traversal/
+// https://leetcode.com/explore/featured/card/july-leetcoding-challenge/544/week-1-july-1st-july-7th/3378/
+// 34 / 34 test cases passed; Runtime: 120 ms; Memory Usage: 38.6 MB
 
 /**
  * Definition for a binary tree node.
@@ -67,7 +69,7 @@ var levelOrderBottom = function (root) {
     results.push(level); /* push each level's result in results */
     // console.log("result =", results);
   }
-  return results; /* return results*/
+  return results.reverse(); /* return results, in reverse order */
 };
 
 // Input = [3, 9, 20, null, null, 15, 7];
@@ -84,4 +86,4 @@ const root = {
 
 console.log(levelOrderBottom(root));
 
-// Output [[3],[9,20],[15,7]]
+// Output [ [ 15, 7 ], [ 9, 20 ], [ 3 ] ]

@@ -1,4 +1,6 @@
 // LC 111 - https://leetcode.com/problems/minimum-depth-of-binary-tree/
+// The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+// Note: A leaf is a node with no children.
 // Runtime: 72 ms, faster than 68.88% of JavaScript online submissions for Minimum Depth of Binary Tree.
 
 var minDepth = function (root) {
@@ -13,20 +15,16 @@ var minDepth = function (root) {
 
     while (size > 0) {
       let currentNode = queue.shift();
-
-      // For cases like [0] or [3] return 1
       if (currentNode.left == null && currentNode.right == null) {
         depth++;
         return depth;
       }
-
       if (currentNode.left) {
         queue.push(currentNode.left);
       }
       if (currentNode.right) {
         queue.push(currentNode.right);
       }
-
       size--;
     }
     depth++;

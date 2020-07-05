@@ -8,16 +8,13 @@
  * @return {number}
  */
 var hammingDistance = function (x, y) {
-  console.log("x = " + x);
-  console.log("y = " + y);
+  
   function binary(num) {
     let binary = [];
     while (num > 1) {
-      console.log(" num = " + num);
       binary.push(num % 2);
-      console.log(" num after push num%2 = " + num);
       num = Math.floor(num / 2);
-      console.log(" num after num/2 = " + num);
+      // console.log(" num after num/2 = " + num);
     }
     binary.push(num % 2);
     return binary.reverse();
@@ -26,14 +23,9 @@ var hammingDistance = function (x, y) {
   let x_binary = binary(x);
   let y_binary = binary(y);
 
-  console.log("x binary = " + x_binary);
-  console.log("y binary = " + y_binary);
-
   let len_x = x_binary.length;
   let len_y = y_binary.length;
-  console.log("x length = " + len_x);
-  console.log("y length = " + len_y);
-
+ 
   if (len_x != len_y) {
     len_x < len_y ? append_x() : append_y();
   }
@@ -49,10 +41,6 @@ var hammingDistance = function (x, y) {
   len_x = x_binary.length;
   len_y = y_binary.length;
 
-  console.log("x binary = " + x_binary);
-  console.log("y binary = " + y_binary);
-  console.log("x length = " + len_x);
-  console.log("y length = " + len_y);
   let count = 0;
   for (let k = 0; k < len_x; k++) {
     if (x_binary[k] != y_binary[k]) count++;
